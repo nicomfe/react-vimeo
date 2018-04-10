@@ -149,7 +149,7 @@ function (_React$Component) {
 
         case 'defaultTextTrack':
           {
-            player.enableTextTrack('en').then(function (track) {
+            player.enableTextTrack(_this3.props.defaultTextTrack).then(function (track) {
               console.log('language set to', track.language);
             }).catch(function (error) {
               console.log(error);
