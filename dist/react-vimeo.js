@@ -172,7 +172,7 @@ function (_React$Component) {
     this.player = new Player(this.container, this.getInitialOptions());
 
     if (this.props.defaultTextTrack) {
-      player.enableTextTrack(this.props.defaultTextTrack);
+      this.player.enableTextTrack(this.props.defaultTextTrack);
     }
 
     Object.keys(eventNames).forEach(function (dmName) {
