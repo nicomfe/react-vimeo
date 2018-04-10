@@ -87,7 +87,11 @@ class Vimeo extends React.Component {
           }
           break;
         case 'defaultTextTrack': {
-          player.enableTextTrack(this.props.defaultTextTrack)
+          player.enableTextTrack('en').then(function(track) {
+              console.log('language set to', track.language)
+          }).catch(function(error) {
+            console.log(error)
+          });
         }
         default:
           // Nothing
