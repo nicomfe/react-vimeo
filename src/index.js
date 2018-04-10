@@ -37,6 +37,7 @@ class Vimeo extends React.Component {
       title: this.props.showTitle,
       muted: this.props.muted,
       background: this.props.background,
+      defaultTextTrack: this.props.defaultTextTrack,
     };
   }
 
@@ -85,6 +86,9 @@ class Vimeo extends React.Component {
             player.unload();
           }
           break;
+        case 'defaultTextTrack': {
+          player.enableTextTrack(this.props.defaultTextTrack)
+        }
         default:
           // Nothing
       }
@@ -293,6 +297,10 @@ if (process.env.NODE_ENV !== 'production') {
      */
     onLoaded: PropTypes.func,
 
+    /**
+     * When defined CC will be on by default with the language set in this prop
+     */
+    defaultTextTrack: PropTypes.string,
     /* eslint-enable react/no-unused-prop-types */
   };
 }
