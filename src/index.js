@@ -105,6 +105,10 @@ class Vimeo extends React.Component {
   createPlayer() {
     this.player = new Player(this.container, this.getInitialOptions());
 
+    if (this.props.defaultTextTrack) {
+      player.enableTextTrack(this.props.defaultTextTrack)
+    }
+
     Object.keys(eventNames).forEach((dmName) => {
       const reactName = eventNames[dmName];
       this.player.on(dmName, (event) => {

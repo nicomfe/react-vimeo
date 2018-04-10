@@ -170,6 +170,11 @@ function (_React$Component) {
     var _this4 = this;
 
     this.player = new Player(this.container, this.getInitialOptions());
+
+    if (this.props.defaultTextTrack) {
+      player.enableTextTrack(this.props.defaultTextTrack);
+    }
+
     Object.keys(eventNames).forEach(function (dmName) {
       var reactName = eventNames[dmName];
 
